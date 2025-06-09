@@ -13,7 +13,14 @@
     "format:check": "prettier --check .",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "clean": "if exist dist rmdir /s /q dist && if exist node_modules\\.cache rmdir /s /q node_modules\\.cache"
+    "clean": "if exist dist rmdir /s /q dist && if exist node_modules\\.cache rmdir /s /q node_modules\\.cache",
+    
+    "_comment": "=== Git Automation Scripts ===",
+    "git:save": "git add . && git commit -m \"save: work in progress\" && git push",
+    "git:commit": "git add . && git commit -m",
+    "git:deploy": "npm run format && git add . && git commit -m \"deploy: production ready\" && git push",
+    "git:backup": "git add . && git commit -m \"backup: emergency save\" && git push",
+    "git:quick": "git add . && git commit -m \"quick save\" && git push"
   },
   "dependencies": {
     "@electric-sql/client": "^1.0.4",
